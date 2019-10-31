@@ -1,7 +1,7 @@
 
 public interface Checksum {
 
-    void update(byte bytes[], int crc_value, int size);
+    void update(byte[] bytes, int start, int size);
     long getValue();
 
 }

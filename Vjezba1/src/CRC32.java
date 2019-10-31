@@ -4,36 +4,31 @@ public class CRC32 implements Checksum {
     private long[] table;
 
     CRC32() {
-        long rem;
-        table = new long[256];
-        for (int i = 0; i < 256; i++) {
-            rem = i;
-            for (int j = 0; j < 8; j++) {
-                if ((rem & 1) == 1) {
-                    rem >>>= 1;
-                    rem ^= 0xedb88320;
-                } else {
-                    rem >>>= 1;
-                }
-            }
-            table[i] = rem;
-        }
+        crc = 0;
     }
 
     @Override
-    public void update(byte[] bytes, int crc_value, int size) {
-        crc = ~crc_value;
+    public void update(byte[] b, int start, int size) {
+        crc = 0xFFFFFFFF;
 
         for (int i = 0; i < size; i++) {
-            crc = (int)((crc >>> 8) ^ table[(crc & 0xff) ^ bytes[i]]);
-        }
+            int tmp = (crc ^ b[start + i]) & 0xFF;
 
+            for (int j = 0; j < 8; j++) {
+                if ((tmp & 1) == 1) {
+                    tmp = (tmp >>> 1) ^ 0xEDB88320;
+                } else {
+                    tmp = (tmp >>> 1);
+                }
+            }
+            crc = (crc >>> 8) ^ tmp;
+        }
         crc = ~crc;
     }
 
     @Override
     public long getValue() {
-        return crc;
+        return crc & (long)(Math.pow(2, 32)-1);
     }
 
 }
