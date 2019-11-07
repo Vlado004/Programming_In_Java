@@ -42,10 +42,21 @@ public class CRC32 implements Checksum {
     }
 
     @Override
-    public void update(int bytes) {
-        byte[] bite = new byte[1];
-        bite[0] = (byte) (bytes & 0xFF);
-        update(bite, 0, 1);
+    public void update(int b) {
+        crc = ~crc;
+        int poly = 0xEDB88320;
+        int temp = (crc ^ b) & 0xff;
+
+        // read 8 bits, one at a time
+        for (int j = 0; j < 8; j++) {
+            if ((temp & 1) == 1) {
+                temp = (temp >>> 1) ^ poly;
+            } else {
+                temp = (temp >>> 1);
+            }
+        }
+        crc = (crc >>> 8) ^ temp;
+        crc = ~crc;
     }
 
 }
