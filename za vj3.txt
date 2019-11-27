@@ -1,0 +1,5 @@
+Objekt mjeraca koji ce se sastojat od jos 3 objekta (senzora), oni ce imat ime, max i min vriijednost, mjernu jedinicu i mogucnost generiranja vrijednosti
+to ce se desavat npr svakih 10 sekundi (generiranje sranja). Mosquitto??????
+
+
+slijedeca je JSON sranje koje ce se deserijalizirat i onda sve ovo radit umjesto toga
