@@ -1,8 +1,6 @@
 package MQTT_SUB;
 
-import jdk.jfr.StackTrace;
 import org.eclipse.paho.client.mqttv3.*;
-import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 public class Subscriber implements MqttCallback {
 
@@ -19,10 +17,10 @@ public class Subscriber implements MqttCallback {
 
     public void run() {
         try {
-            client = new MqttClient("tcp://localhost:5654", "Subscriber_Test");
+            client = new MqttClient("tcp://localhost:1883", "Subscriber_Test");
             client.subscribe("#");
         } catch (MqttException e) {
-            System.out.println(StackTrace);
+            e.printStackTrace();
             System.exit(1);
         }
     }
