@@ -11,18 +11,22 @@ public class Subscriber implements MqttCallback {
         System.exit(2);
     }
 
-    public void messageArrived(String topic, MqttMessage message) throws Exception {
+    public void messageArrived(String topic, MqttMessage message) {
         System.out.println(String.format("[%s] %s", topic, new String(message.getPayload())));
     }
 
     public void run() {
-        try {
+        /*try {
             client = new MqttClient("tcp://localhost:1883", "Subscriber_Test");
-            client.subscribe("#");
+            client.setCallback(this);
+            client.connect();
+            client.subscribe("#", 1);
         } catch (MqttException e) {
             e.printStackTrace();
             System.exit(1);
-        }
+        }*/
+        GUI g = new GUI();
+        g.create();
     }
 
     //Nepotrebno ali jer je interface moramo declare-at
