@@ -27,6 +27,11 @@ public class Subscriber implements MqttCallback {
         }*/
         GUI g = new GUI();
         g.create();
+        g.addMessage("Test1");
+        g.addMessage("Test2");
+        g.addMessage("Test3");
+        g.addMessage("Test4");
+        g.addMessage("Test5");
     }
 
     //Nepotrebno ali jer je interface moramo declare-at

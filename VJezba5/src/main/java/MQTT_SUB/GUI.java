@@ -7,7 +7,9 @@ import java.awt.*;
 
 class GUI {
 
-    void create() {
+    private JPanel messageBox;
+
+    void create(/*String[] hostList, String[] topicList*/) {
 
         JFrame frame = new JFrame("MQTT Subscriber");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -17,41 +19,55 @@ class GUI {
         GridBagConstraints constraint = new GridBagConstraints();
         constraint.fill = GridBagConstraints.HORIZONTAL;
         constraint.weightx = 0.5;
+        constraint.insets = new Insets(5,5,0,5);
 
-        JLabel topLabel = new JLabel("Select Topic");
+        JLabel hostLabel = new JLabel("Select Host");
         constraint.gridx = 0;
         constraint.gridy = 0;
-        pane.add(topLabel, constraint);
+        pane.add(hostLabel, constraint);
 
         String[] petStrings = { "#", "Temperature", "Pressure" };
-        JComboBox combox = new JComboBox(petStrings);
-        combox.setEditable(true);
+        JComboBox hostCombo = new JComboBox(petStrings);
         constraint.gridx = 1;
         constraint.gridy = 0;
-        pane.add(combox, constraint);
+        pane.add(hostCombo, constraint);
 
-        JButton add = new JButton("Add");
+        JLabel topicLabel = new JLabel("Select Topic");
         constraint.gridx = 0;
         constraint.gridy = 1;
-        constraint.insets = new Insets(5,5,0,5);
-        pane.add(add, constraint);
+        pane.add(topicLabel, constraint);
 
-        JButton remove = new JButton("Remove");
+        //String[] petStrings = { "#", "Temperature", "Pressure" };
+        JComboBox topicCombo = new JComboBox(petStrings);
         constraint.gridx = 1;
         constraint.gridy = 1;
-        constraint.insets = new Insets(5,5,0,5);
-        pane.add(remove, constraint);
+        pane.add(topicCombo, constraint);
 
-        JTextField text = new JTextField();
+        JButton conButton = new JButton("Connect");
         constraint.gridx = 0;
         constraint.gridy = 2;
         constraint.gridwidth = 2;
+        constraint.insets = new Insets(5,10,0,10);
+        pane.add(conButton, constraint);
+
+        messageBox = new JPanel();
+        JScrollPane scrollBox = new JScrollPane();
+        messageBox.add(scrollBox);
+        constraint.gridy = 3;
         constraint.ipadx = 300;
         constraint.ipady = 300;
         constraint.insets = new Insets(5,0,0,0);
-        pane.add(text, constraint);
+        pane.add(messageBox, constraint);
 
         frame.pack();
         frame.setVisible(true);
+    }
+
+    void addMessage(String message) {
+
+        JTextArea text = new JTextArea(message);
+        text.setSize(300, 50);
+        text.setEditable(false);
+        messageBox.add(text);
     }
 }
