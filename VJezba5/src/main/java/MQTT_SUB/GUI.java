@@ -8,6 +8,7 @@ import java.awt.*;
 class GUI {
 
     private JPanel messageBox;
+//    private JScrollPane messageBox;
 
     void create(/*String[] hostList, String[] topicList*/) {
 
@@ -50,12 +51,15 @@ class GUI {
         constraint.insets = new Insets(5,10,0,10);
         pane.add(conButton, constraint);
 
+//        messageBox = new JScrollPane();
         messageBox = new JPanel();
+        messageBox.setLayout(new FlowLayout());
+        messageBox.setPreferredSize(new Dimension(300, 300));
         JScrollPane scrollBox = new JScrollPane();
         messageBox.add(scrollBox);
         constraint.gridy = 3;
-        constraint.ipadx = 300;
-        constraint.ipady = 300;
+        //constraint.ipadx = 300;
+        //constraint.ipady = 300;
         constraint.insets = new Insets(5,0,0,0);
         pane.add(messageBox, constraint);
 
@@ -65,8 +69,8 @@ class GUI {
 
     void addMessage(String message) {
 
-        JTextArea text = new JTextArea(message);
-        text.setSize(300, 50);
+        JTextArea text = new JTextArea(message, 4, 20);
+        text.setPreferredSize(new Dimension(300, 20));
         text.setEditable(false);
         messageBox.add(text);
     }
