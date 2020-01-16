@@ -1,0 +1,1 @@
+{"hostList":["tcp://localhost:1883"],"topics":["#","Temperature","Pressure","Consumption","Cubic Consumption"]}

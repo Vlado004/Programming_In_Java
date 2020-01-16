@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b309b0de-7272-4a01-b57c-85854c3d3105" name="Default Changelist" comment="" />
+    <list default="true" id="b309b0de-7272-4a01-b57c-85854c3d3105" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Vjezba6/config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Vjezba6/src/main/java/MQTT/MQTTPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Vjezba6/src/main/java/MQTT/SensorData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Vjezba6/src/main/java/MQTT/WaterMeasurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VJezba5/src/main/java/MQTT_SUB/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VJezba5/src/main/java/MQTT_SUB/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VJezba5/src/main/java/MQTT_SUB/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VJezba5/src/main/java/MQTT_SUB/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VJezba5/src/main/java/MQTT_SUB/Subscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VJezba5/src/main/java/MQTT_SUB/Subscriber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VJezba5/target/classes/MQTT_SUB/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../VJezba5/target/classes/MQTT_SUB/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VJezba5/target/classes/MQTT_SUB/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../VJezba5/target/classes/MQTT_SUB/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VJezba5/target/classes/MQTT_SUB/Subscriber.class" beforeDir="false" afterPath="$PROJECT_DIR$/../VJezba5/target/classes/MQTT_SUB/Subscriber.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vjezba4.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vjezba6/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Vjezba6/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vjezba6/Vjezba6.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vjezba6/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Vjezba6/pom.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +31,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -24,6 +43,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1UX07Dvp4S7ESDfIPqce9DetLR9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -72,5 +92,18 @@
       <updated>1575487462749</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

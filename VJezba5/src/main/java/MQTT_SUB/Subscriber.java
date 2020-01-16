@@ -5,6 +5,9 @@ import org.eclipse.paho.client.mqttv3.*;
 public class Subscriber implements MqttCallback {
 
     private MqttClient client;
+    private String[] hostList;
+    private String[] topics;
+    private GUI gui;
 
     public void connectionLost(Throwable cause) {
         System.out.println("Connection lost because: " + cause);
@@ -12,26 +15,38 @@ public class Subscriber implements MqttCallback {
     }
 
     public void messageArrived(String topic, MqttMessage message) {
-        System.out.println(String.format("[%s] %s", topic, new String(message.getPayload())));
+        gui.addMessage(String.format("[%s] %s", topic, new String(message.getPayload())));
     }
 
     public void run() {
-        /*try {
-            client = new MqttClient("tcp://localhost:1883", "Subscriber_Test");
+            gui = new GUI(this);
+            gui.create(hostList, topics);
+
+    }
+
+    public void connect(String serverURI, String topic) {
+        try {
+            if (client != null) {
+                if (client.isConnected()) {
+                    client.disconnect();
+                }
+            }
+            client = new MqttClient(serverURI, "Subscriber_Test");
             client.setCallback(this);
             client.connect();
-            client.subscribe("#", 1);
+            client.subscribe(topic, 1);
         } catch (MqttException e) {
             e.printStackTrace();
             System.exit(1);
-        }*/
-        GUI g = new GUI();
-        g.create();
-        g.addMessage("Test1");
-        g.addMessage("Test2");
-        g.addMessage("Test3");
-        g.addMessage("Test4");
-        g.addMessage("Test5");
+        }
+    }
+
+    public void setHostList(String[] values) {
+        hostList = values;
+    }
+
+    public void setTopics(String[] values) {
+        topics = values;
     }
 
     //Nepotrebno ali jer je interface moramo declare-at

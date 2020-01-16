@@ -1,9 +1,15 @@
 package MQTT_SUB;
 
-public class App {
-    public static void main(String args[]) {
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-        Subscriber sub = new Subscriber();
+import java.io.File;
+import java.io.IOException;
+
+public class App {
+    public static void main(String args[]) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+
+        Subscriber sub = mapper.readValue(new File(".\\config.json"), Subscriber.class);
         sub.run();
     }
 }
